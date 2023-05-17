@@ -1,0 +1,85 @@
+.card-monitor {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  bottom: 80px;
+  border-radius: 20px;
+  gap: 17px;
+  width: 730px;
+  height: 270px;
+}
+.card-monitor p {
+  color: var(--color-Dark-gray);
+}
+
+.img-master {
+  position: absolute;
+  top: -30px;
+}
+
+.button-proyect {
+  width: 200px;
+  height: 56px;
+  border-radius: 28px;
+  border: none;
+  background-color: var(--Moderate-cyan);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+.button-proyect:hover {
+  cursor: pointer;
+  background-color: var(--Dark-cyan);
+}
+.button-proyect:focus {
+  cursor: pointer;
+  background-color: var(--Dark-cyan);
+}
+
+.btn-bookmark {
+  border-radius: 45px;
+  width: fit-content;
+  height: 57px;
+  border: none;
+  cursor: pointer;
+}
+
+.content-btn-bookmark {
+  display: flex;
+  justify-content: space-between;
+  width: 87%;
+  padding-top: 29px;
+}
+label:hover {
+  color: var(--Dark-cyan);
+  cursor: pointer;
+}
+
+label:focus {
+  color: var(--Dark-cyan);
+}
+.bookmark {
+  display: flex;
+  width: 175px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: var(--gray-white);
+  gap: 10px;
+}
+
+.btn-bookmark.active svg g circle {
+  fill: var(--Dark-cyan);
+}
+
+.btn-bookmark.active svg g path {
+  fill: white;
+}
+
+.bookmark p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

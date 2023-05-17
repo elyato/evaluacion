@@ -1,0 +1,34 @@
+.card-alert {
+  position: relative;
+  width: 539px;
+  height: 449px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  padding-inline: 39px;
+  border-radius: 15px;
+  display: flex;
+}
+.img-check {
+  width: 90px;
+  height: 90px;
+  border-radius: 30px;
+}
+.card-alert button {
+  width: 107px;
+  height: 48px;
+  border-radius: 28px;
+  border: none;
+  background-color: var(--Moderate-cyan);
+}
+
+.card-alert button:hover {
+  cursor: pointer;
+  background-color: var(--Dark-cyan);
+}
+.card-alert button:focus {
+  cursor: pointer;
+  background-color: var(--Dark-cyan);
+}

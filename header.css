@@ -1,0 +1,41 @@
+header {
+  background-image: url(images/image-hero-desktop.jpg);
+  height: 400px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 52px;
+  background-repeat: round;
+}
+nav {
+  height: fit-content;
+}
+#menu-open {
+  display: none;
+}
+
+#menu-close {
+  display: none;
+}
+
+.content-nav {
+  display: none;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  color: #fff;
+  height: 10px;
+}
+
+li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.img-logo {
+  width: 130px;
+  height: 20px;
+}
