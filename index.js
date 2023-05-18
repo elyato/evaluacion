@@ -8,16 +8,6 @@ const openCLose = () => {
     imgMenu.src = "images/icon-hamburger.svg";
   }
 };
-function toggleCard(open) {
-  const modal = document.getElementById("card-alert");
-  modal.classList.add("modal");
-  if (open == true) {
-    cardAlert.style.display = "flex";
-  } else {
-    cardAlert.style.display = "none";
-  }
-}
-
 function prendidoApagado(open) {
   const modal = document.getElementById("modal");
   modal.classList.toggle("encendido");
@@ -77,66 +67,42 @@ addCardClickListener(card1, contentAmountCard1);
 addCardClickListener(card2, contentAmountCard2);
 addCardClickListener(card3, contentAmountCard3);
 
-// const input = document.getElementById("input-sponsor");
-// const button = document.getElementById("btn-sponsor");
-// const cardAlert = document.getElementById("card-alert");
-
-// function validateInput() {
-//   let inputValue = input.value;
-
-//   if ((button = inputValue)) {
-//     button.disabled = false;
-//   } else {
-//     button.disabled = true;
-//     cardAlert.style.display = "flex";
-//   }
-// }
-// validateInput()
-// function sponsorAmout(open) {
-//   buttonSponsor.disabled = true;
-
-//   if (open == true) {
-//     if (inputSponsor.value <= 0) {
-//       buttonSponsor;
-//     } else {
-//       buttonSponsor;
-//     }
-//   }
-// }
-
-// sponsorAmout();
-
 const inputSponsor = document.getElementById("input-sponsor");
 const buttonSponsor = document.getElementById("btn-sponsor");
 const containerSales = document.getElementById("modal");
 const cardAlert = document.getElementById("card-alert");
+
 buttonSponsor.addEventListener("click", () => {
   if (inputSponsor.value <= 0) {
-    inputSponsor.style.border = "solid red 1px";
+    alert("tiene que ingresar un valor mayor a 0");
+  } else {
+    containerSales.classList.remove("encendido");
+    cardAlert.classList.add("encendido");
+  }
+});
+
+const btnGotIt = document.getElementById("btn-got-it");
+btnGotIt.addEventListener("click", () => {
+  cardAlert.classList.remove("encendido");
+});
+const btnBamboo = document.getElementById("button-bamboo");
+const inputBamboo = document.getElementById("inputBamboo");
+btnBamboo.addEventListener("click", () => {
+  if (inputBamboo.value < 25) {
+    alert("ingrese un valor mayor a 24");
   } else {
     cardAlert.classList.add("encendido");
     containerSales.classList.add("apagado");
   }
 });
 
-// const btnBamboo = document.getElementById("button-bamboo");
-// const inputBamboo = document.getElementById("inputBamboo");
-// btnBamboo.addEventListener("click", () => {
-//   if (inputBamboo.value <= 25) {
-//     inputBamboo.style.border = "solid red 1px";
-//   } else {
-//     cardAlert.classList.add("encendido");
-//     containerSales.classList.add("apagado");
-//   }
-// });
-
-// const buttonBlack = document.getElementById("buttonBlack");
-// const blackEdition = document.getElementById("black-edition");
-// buttonBlack.addEventListener("click", () => {
-//   if (blackEdition.value <= 75) {
-//     blackEdition.style.border = "solid red 1px";
-//   } else {
-//     cardAlert.classList.add("encendido");
-//     containerSales.classList.add("apagado");
-//   }
-// });
+const buttonBlack = document.getElementById("buttonBlack");
+const blackEdition = document.getElementById("black-edition");
+buttonBlack.addEventListener("click", () => {
+  if (blackEdition.value < 75) {
+    alert("ingrese un valor mayor a 74")
+  } else {
+    cardAlert.classList.add("encendido");
+    containerSales.classList.add("apagado");
+  }
+});
