@@ -16,6 +16,7 @@ function prendidoApagado(open) {
   } else {
     modal.classList.remove("apagado");
   }
+  openCloseCard();
 }
 
 function addToFavorites() {
@@ -45,12 +46,31 @@ const sponsor = checked("articleReward", "subtitle-reward");
 const bamboo = checked("articleBamboo", "BambooStand");
 const black = checked("articleBlack", "black-edition");
 
+function openCloseCard(contentAmount) {
+  const arayCard = [
+    "content-prices",
+    "content-prices-bamboo",
+    "content-amount-black",
+  ];
+  arayCard.forEach((element) => {
+    const el = document.getElementById(element);
+    el.classList.add("hd");
+    if (element === contentAmount) {
+      el.classList.add("fl");
+      el.classList.remove("hd");
+    }
+    if (element != contentAmount) {
+      el.classList.remove("fl");
+      el.classList.add("hd");
+    }
+  });
+}
+///boton.disbaled=false;
+//buttonSponsor.classl
+
 function addCardClickListener(card, contentAmount) {
   card.addEventListener("click", () => {
-    contentAmountCard1.style.display = "none";
-    contentAmountCard2.style.display = "none";
-    contentAmountCard3.style.display = "none";
-    contentAmount.style.display = "flex";
+    openCloseCard(contentAmount);
   });
 }
 
@@ -63,46 +83,94 @@ const contentAmountCard2 = document.getElementById("content-prices-bamboo");
 const card3 = document.getElementById("articleBlack");
 const contentAmountCard3 = document.getElementById("content-amount-black");
 
-addCardClickListener(card1, contentAmountCard1);
-addCardClickListener(card2, contentAmountCard2);
-addCardClickListener(card3, contentAmountCard3);
+addCardClickListener(card1, "content-prices");
+addCardClickListener(card2, "content-prices-bamboo");
+addCardClickListener(card3, "content-amount-black");
 
 const inputSponsor = document.getElementById("input-sponsor");
+
 const buttonSponsor = document.getElementById("btn-sponsor");
 const containerSales = document.getElementById("modal");
 const cardAlert = document.getElementById("card-alert");
+const warning = document.getElementById("warning");
 
 buttonSponsor.addEventListener("click", () => {
   if (inputSponsor.value <= 0) {
-    alert("tiene que ingresar un valor mayor a 0");
+    warning.classList.add("encendido");
   } else {
     containerSales.classList.remove("encendido");
     cardAlert.classList.add("encendido");
   }
+});
+inputSponsor.addEventListener("keyup", () => {
+  if (event.keyCode == 13) {
+    if (inputSponsor.value > 0) {
+      buttonSponsor.removeAttribute("disabled");
+      containerSales.classList.remove("encendido");
+      cardAlert.classList.add("encendido");
+      buttonSponsor.setAttribute("disabled");
+    } else {
+      warning.classList.add("encendido");
+    }
+  }
+});
+
+const btnWarning = document.getElementById("btn-warning");
+btnWarning.addEventListener("click", () => {
+  warning.classList.remove("encendido");
 });
 
 const btnGotIt = document.getElementById("btn-got-it");
 btnGotIt.addEventListener("click", () => {
   cardAlert.classList.remove("encendido");
 });
+
 const btnBamboo = document.getElementById("button-bamboo");
 const inputBamboo = document.getElementById("inputBamboo");
+
 btnBamboo.addEventListener("click", () => {
-  if (inputBamboo.value < 25) {
-    alert("ingrese un valor mayor a 24");
+  if (inputBamboo.value >= 25) {
+    warning.classList.add("encendido");
   } else {
+    containerSales.classList.remove("encendido");
     cardAlert.classList.add("encendido");
-    containerSales.classList.add("apagado");
+  }
+});
+
+inputBamboo.addEventListener("keyup", () => {
+  if (event.keyCode == 13) {
+    if (inputBamboo.value >= 25) {
+      btnBamboo.removeAttribute("disabled");
+      containerSales.classList.remove("encendido");
+      cardAlert.classList.add("encendido");
+      buttonSponsor.setAttribute("disabled");
+    } else {
+      warning.classList.add("encendido");
+    }
   }
 });
 
 const buttonBlack = document.getElementById("buttonBlack");
 const blackEdition = document.getElementById("black-edition");
+
 buttonBlack.addEventListener("click", () => {
-  if (blackEdition.value < 75) {
-    alert("ingrese un valor mayor a 74")
+  if (blackEdition.value <= 75) {
+    warning.classList.add("encendido");
   } else {
+    containerSales.classList.remove("encendido");
     cardAlert.classList.add("encendido");
-    containerSales.classList.add("apagado");
+  }
+});
+
+blackEdition.addEventListener("keyup", () => {
+  if (event.keyCode == 13) {
+    if (blackEdition.value >= 75) {
+      buttonBlack.removeAttribute("disabled");
+      containerSales.classList.remove("encendido");
+      cardAlert.classList.add("encendido");
+      buttonBlack.setAttribute("disabled");
+    } else {
+      warning.classList.add("encendido");
+    }
   }
 });

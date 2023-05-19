@@ -1,0 +1,199 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.container-sales {
+  background: white;
+  padding: 45px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 750px;
+}
+.img-close-card {
+  display: flex;
+  position: relative;
+}
+
+.close-card {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: -16px;
+  top: -17px;
+  cursor: pointer;
+}
+.close-card img:hover {
+  animation: rotate 1s infinite;
+}
+
+.card-buy-monitor {
+  height: fit-content;
+  padding: 28px;
+  gap: 14px;
+  box-shadow: 0px 0px 1px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 13px;
+}
+.units-available {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.radio-input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--Dark-cyan);
+}
+.card-buy-monitor h3 {
+  font-size: 14px;
+}
+
+.radio-input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--Dark-cyan);
+}
+input {
+  accent-color: var(--Dark-cyan);
+}
+.sponsorship-card h3 {
+  font-size: 14px;
+}
+
+.sponsorship-card label:hover {
+  cursor: pointer;
+  color: var(--Dark-cyan);
+  font-weight: bold;
+}
+
+label {
+  font-weight: 600;
+}
+label:focus {
+  cursor: pointer;
+  color: var(--Dark-cyan);
+  font-weight: bold;
+}
+.sponsorship-card P {
+  font-size: 15px;
+  padding-left: 28px;
+  line-height: 20px;
+  color: var(--color-Dark-gray);
+  padding-bottom: 22px;
+}
+
+.sponsorship-card {
+  height: auto;
+  padding: 28px;
+  gap: 14px;
+  box-shadow: 0px 0px 1px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 13px;
+}
+
+.content-value {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-Dark-gray);
+  padding-top: 20px;
+}
+.value {
+  width: 99px;
+  height: 48px;
+  border-radius: 25px;
+  border: solid 1px var(--color-Dark-gray);
+  text-align: center;
+  outline: none;
+  caret-color: var(--Dark-cyan);
+}
+
+.card-buy-monitor:last-child {
+  opacity: 0.4;
+  cursor: no-drop;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.button-value:disabled {
+  background-color: gray;
+}
+
+.button-value {
+  width: 107px;
+  height: 48px;
+  border-radius: 28px;
+  border: none;
+  background-color: var(--Dark-cyan);
+  color: #fff;
+  font-weight: 700;
+}
+.button-value:hover,
+.button-value:focus {
+  background-color: var(--Moderate-cyan);
+  cursor: pointer;
+}
+
+.hd {
+  display: none;
+}
+.fl {
+  display: flex;
+}
+
+.number-invalide {
+  width: 400px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  justify-content: space-evenly;
+  border-radius: 20px;
+}
+
+.number-invalide button {
+  width: 90px;
+  height: 45px;
+  border-radius: 15px;
+  background-color: var(--Moderate-cyan);
+  border: none;
+  color: white;
+  font-weight: bolder;
+  font-size: 14px;
+}
+.number-invalide svg {
+  fill: red;
+}
