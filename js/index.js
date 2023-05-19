@@ -129,7 +129,7 @@ const btnBamboo = document.getElementById("button-bamboo");
 const inputBamboo = document.getElementById("inputBamboo");
 
 btnBamboo.addEventListener("click", () => {
-  if (inputBamboo.value >= 25) {
+  if (inputBamboo.value >= 24) {
     warning.classList.add("encendido");
   } else {
     containerSales.classList.remove("encendido");
@@ -139,7 +139,7 @@ btnBamboo.addEventListener("click", () => {
 
 inputBamboo.addEventListener("keyup", () => {
   if (event.keyCode == 13) {
-    if (inputBamboo.value >= 25) {
+    if (inputBamboo.value > 24) {
       btnBamboo.removeAttribute("disabled");
       containerSales.classList.remove("encendido");
       cardAlert.classList.add("encendido");
@@ -154,7 +154,7 @@ const buttonBlack = document.getElementById("buttonBlack");
 const blackEdition = document.getElementById("black-edition");
 
 buttonBlack.addEventListener("click", () => {
-  if (blackEdition.value <= 75) {
+  if (blackEdition.value > 74) {
     warning.classList.add("encendido");
   } else {
     containerSales.classList.remove("encendido");
@@ -164,7 +164,7 @@ buttonBlack.addEventListener("click", () => {
 
 blackEdition.addEventListener("keyup", () => {
   if (event.keyCode == 13) {
-    if (blackEdition.value >= 75) {
+    if (blackEdition.value > 74) {
       buttonBlack.removeAttribute("disabled");
       containerSales.classList.remove("encendido");
       cardAlert.classList.add("encendido");
