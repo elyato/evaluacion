@@ -104,13 +104,13 @@ buttonSponsor.addEventListener("click", () => {
 });
 inputSponsor.addEventListener("keyup", () => {
   if (event.keyCode == 13) {
-    if (inputSponsor.value > 0) {
+    if (inputSponsor.value <= 0) {
+      warning.classList.add("encendido");
+    } else {
       buttonSponsor.removeAttribute("disabled");
       containerSales.classList.remove("encendido");
-      cardAlert.classList.add("encendido");
-      buttonSponsor.setAttribute("disabled");
-    } else {
-      warning.classList.add("encendido");
+      // cardAlert.classList.add("encendido");
+      // buttonSponsor.setAttribute("disabled");
     }
   }
 });
@@ -129,7 +129,7 @@ const btnBamboo = document.getElementById("button-bamboo");
 const inputBamboo = document.getElementById("inputBamboo");
 
 btnBamboo.addEventListener("click", () => {
-  if (inputBamboo.value >= 24) {
+  if (inputBamboo.value <= 25) {
     warning.classList.add("encendido");
   } else {
     containerSales.classList.remove("encendido");
@@ -139,38 +139,37 @@ btnBamboo.addEventListener("click", () => {
 
 inputBamboo.addEventListener("keyup", () => {
   if (event.keyCode == 13) {
-    if (inputBamboo.value > 24) {
+    if (inputBamboo.value >= 25) {
       btnBamboo.removeAttribute("disabled");
       containerSales.classList.remove("encendido");
       cardAlert.classList.add("encendido");
-      buttonSponsor.setAttribute("disabled");
     } else {
       warning.classList.add("encendido");
+      // buttonSponsor.setAttribute("disabled");
     }
   }
 });
 
 const buttonBlack = document.getElementById("buttonBlack");
-const blackEdition = document.getElementById("black-edition");
+const inputBlack = document.getElementById("input-black");
 
-buttonBlack.addEventListener("click", () => {
-  if (blackEdition.value > 74) {
-    warning.classList.add("encendido");
-  } else {
-    containerSales.classList.remove("encendido");
-    cardAlert.classList.add("encendido");
-  }
-});
-
-blackEdition.addEventListener("keyup", () => {
+inputBlack.addEventListener("keyup", () => {
   if (event.keyCode == 13) {
-    if (blackEdition.value > 74) {
+    if (inputBlack.value >= 75) {
       buttonBlack.removeAttribute("disabled");
       containerSales.classList.remove("encendido");
       cardAlert.classList.add("encendido");
-      buttonBlack.setAttribute("disabled");
     } else {
       warning.classList.add("encendido");
     }
+  }
+});
+buttonBlack.addEventListener("click", () => {
+  if (inputBlack.value >= 75) {
+    containerSales.classList.remove("encendido");
+    cardAlert.classList.add("encendido");
+    
+  } else {
+    warning.classList.add("encendido");
   }
 });
