@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,700&display=swap");
+@import url(header.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+:root {
+  --Bright-Blue: hsl(220, 98%, 61%);
+  /* --Check-Background: linear-gradient ( hsl(192, 100%, 67%) to hsl(280, 87%, 65%)) */
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* dark theme */
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --Ver-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
+.homeworks {
+  height: 63px;
+
+  border-bottom: solid 1px var(--Dark-Grayish-Blue);
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 24px;
+}
+.homeworks div {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.circular-checkbox {
+  appearance: none; /* Desactiva la apariencia por defecto del checkbox */
+  -webkit-appearance: none; /* Para navegadores basados en WebKit, como Safari */
+  -moz-appearance: none; /* Para navegadores basados en Gecko, como Firefox */
+  width: 24px; /* Ajusta el ancho del checkbox */
+  height: 24px; /* Ajusta la altura del checkbox */
+  border-radius: 50%; /* Establece el radio del borde para hacerlo circular */
+  border: 1px solid #e1e1e1; /* Establece un borde al checkbox */
+}
+
+.circular-checkbox:checked {
+  background-image: url(../images/Succes.svg);
+  background-size: cover;
+}
+.circular-checkbox:hover {
+  cursor: pointer;
+}
+
+span {
+  font-size: 20px;
+  color: var(--Ver-Dark-Grayish-Blue);
+}
+
+.content {
+  width: 541px;
+  padding: 11px;
+  height: fit-content;
+  position: relative;
+  bottom: 45px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0px 2px 19px -4px rgba(148, 100, 148, 1);
+}
+
+.content-stick {
+  height: 51px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.content-stick article {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.content-stick article p {
+  padding-right: 46px;
+}
+
+.content-stick article button:last-child{
+  padding-left: 15px;
+}
+
+.content-stick button {
+  border: none;
+  background-color: transparent;
+  height: fit-content;
+  width: fit-content;
+  font-size: 16px;
+}
+
+.content-stick button {
+  cursor: pointer;
+}
